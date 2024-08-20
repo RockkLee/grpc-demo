@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+// The greeting service definition.
+enum ServerType {
+  GOLANG = 0;
+  PYTHON = 1;
+  JAVA = 2;
+}
+
+// The greeting service definition.
+service GreetingService {
+  rpc Greet (Req) returns (Resp) {}
+}
+
+// The request message containing the user's name.
+message Req {
+  string userName = 1;
+  ServerType sender = 2;
+  ServerType recipient = 3;
+  string msg = 4;
+}
+
+// The response message containing the greetings
+message Resp {
+  string msg = 1;
+}

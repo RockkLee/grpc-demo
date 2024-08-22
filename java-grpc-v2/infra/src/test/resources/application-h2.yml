@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: java-grpc-v2
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: 'sa'
+    password: 'sa'
+    url: 'jdbc:h2:mem:my_app'  # The JDBC URL for H2, 'mem:', means that the data is stored in memory, 'my_app:' means that the name of the db is 'my_app'
+  sql:
+    init.mode: always
+  h2:
+    console:
+      enabled: true
+      path: '/h2' # url path for using h2-console
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      #ddl-auto: validate
+      ddl-auto: update
